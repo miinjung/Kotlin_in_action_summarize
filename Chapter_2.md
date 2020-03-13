@@ -7,11 +7,11 @@
 ### 함수
 - 함수 선언시, fun 사용
 - 괄호와 반환 타입 사이에 콜론(:)으로 구분
-'''kotlin
+```kotlin
 fun main (a : Int): Int{
     return TODO
 }
-'''
+```
 
 ## 2. 클래스와 프로퍼티<br>
 ## 3. 서택 표현과 처리 : enum / when<br>
