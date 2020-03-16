@@ -4,7 +4,7 @@
 ##### 스마트 캐스트에 대한 학습<br><br><br>
 
 ## 1. 기본 요소 : 함수와 변수<br>
-### 함수<br><br>
+### 함수<br>
 ```kotlin
 fun max (a : Int): Int{
     return if(a>b) a else b
@@ -24,7 +24,7 @@ fun max (a : Int): Int = if(a>b) a else b
 - 식 하나로 이루어진 경우 중괄호를 없애고, return을 제거한 후, 등호를 식 앞에 붙여서 함수 표현가능<br>
 - 반환 타입 생략 가능 (타입추론 > 정적 타입 지정 언어)<br><br>
 
-### 변수<br><br>
+### 변수<br>
 ```kotlin
 val tmp_1 = 1
 val tmp_2 : Int = 2
@@ -53,6 +53,36 @@ class Person(val name : String){
     //TODO
 }
 ```
+- 'public'이 default라 따로 명시 안함 (자바는 private)
+- 값 객체 생성시 getter/setter가 필요없음
+
+### 프로퍼티
+```kotlin
+class Person(
+    val name : String, 
+    var isMarried : Boolean
+)
+```
+- **자바의 필드와 접근자 메소드를 대신함**
+- val : 읽기 전용 프로퍼티 / 게터만 생성
+- var : 쓸 수 있는 프로퍼티 / 케터와 세터 둘다 생성<br><br>
+
+### 커스텀 접근자
+```kotlin
+class Rectangle (val height : Int, val width : Int){
+    val isSquare : Boolean
+        get(){
+            return height == width
+        }
+}
+```
+- 자체 값을 저장하는 필드 필요없음
+- 게터만 정의하여 구현 가능<br><br>
+
+### 디텍터리와 패키니
+
+
+
 ## 3. 서택 표현과 처리 : enum / when<br>
 ## 4. 대상을 이터레이션 : while / for<br>
 ## 5. 코틀린의 예외처리<br>
