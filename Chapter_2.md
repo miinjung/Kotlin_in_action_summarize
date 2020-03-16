@@ -44,11 +44,15 @@ val name = "Minjung"
 val fullName = "Choi $name"
 ```
 - 문자열 리터럴의 필요한 곳에 변수를 넣되 변수 앞에 $를 추가해야 함<br>
-- '$'문자를 문자열에 넣고 싶으면 \를 같이 사용해야 함 (ex. "\$")<br>
+- '$'문자를 문자열에 넣고 싶으면 \를 같이 사용해야 함 (ex. "\\$")<br>
 - 변수명 바로 뒤에 한글을 붙일 경우 'unresolved reference'오류 발생 {}를 넣어줘야 함(ex. "${name}님 안녕하세요")<br><br><br>
 
 ## 2. 클래스와 프로퍼티<br>
-
+```kotlin
+class Person(val name : String){
+    //TODO
+}
+```
 ## 3. 서택 표현과 처리 : enum / when<br>
 ## 4. 대상을 이터레이션 : while / for<br>
 ## 5. 코틀린의 예외처리<br>
