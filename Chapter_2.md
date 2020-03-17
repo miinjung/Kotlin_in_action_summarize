@@ -79,10 +79,29 @@ class Rectangle (val height : Int, val width : Int){
 - 자체 값을 저장하는 필드 필요없음
 - 게터만 정의하여 구현 가능<br><br>
 
-### 디텍터리와 패키니
-
-
+### 디텍터리와 패키지
+- 코틀린도 마찬가지로 패키지단위로 불러옴(import)
+- 패키지별로 디렉터리를 구성하는 것을 권장
+- 자바에 있는 패키지/디렉터리 사용 가능 (자바와의 호환을 위하여)<br><br>
 
 ## 3. 서택 표현과 처리 : enum / when<br>
+### enum
+```kotlin
+enum class Color{
+    RED, YELLOW, GREEN
+} // 값 열거만
+enum class Color(
+    val r : Int, val g : Int, val b : Int
+){
+    RED(255,0,0), YELLOW(255,255,0), GREEN(0,255,0);
+    
+    fun rgb() = (r*256+ g) * 256 + b
+}
+```
+- 'enum'은 소프트키워드라 불림 (class 앞에 있을 때만 특별한 의미를 지니고 다른 때에는 이름으로 사용가능)
+- 프로퍼티나 메소드 정의 가능
+- 프로퍼티값 지정과 메소드 정의 사이에 세미콜론(;)이 필수(코틀린내에서 유일하게 ;이 필수)<br><br>
+### when으로 enum 다루기
+
 ## 4. 대상을 이터레이션 : while / for<br>
 ## 5. 코틀린의 예외처리<br>
