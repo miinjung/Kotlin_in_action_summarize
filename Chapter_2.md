@@ -10,6 +10,7 @@ fun max (a : Int): Int{
     return if(a>b) a else b
 }
 ```
+<br>
 - 함수 선언시, fun 사용
 - 괄호와 반환 타입 사이에 콜론(:)으로 구분<br><br>
 > #### 문(statement)과 식(expression)의 구분<br>
@@ -21,6 +22,7 @@ fun max (a : Int): Int{
 ```kotlin
 fun max (a : Int): Int = if(a>b) a else b
 ```
+<br>
 - 식 하나로 이루어진 경우 중괄호를 없애고, return을 제거한 후, 등호를 식 앞에 붙여서 함수 표현가능<br>
 - 반환 타입 생략 가능 (타입추론 > 정적 타입 지정 언어)<br><br>
 
@@ -29,6 +31,7 @@ fun max (a : Int): Int = if(a>b) a else b
 val tmp_1 = 1
 val tmp_2 : Int = 2
 ```
+<br>
 - 변수 선언시, 타입 지정을 생략하는 경우가 흔함 (타입추론)
 - 타입을 지정하는 경우, 변수명 뒤에 타입을 명시함<br><br>
 
@@ -43,6 +46,7 @@ val tmp_2 : Int = 2
 val name = "Minjung"
 val fullName = "Choi $name"
 ```
+<br>
 - 문자열 리터럴의 필요한 곳에 변수를 넣되 변수 앞에 $를 추가해야 함<br>
 - '$'문자를 문자열에 넣고 싶으면 \를 같이 사용해야 함 (ex. "\\$")<br>
 - 변수명 바로 뒤에 한글을 붙일 경우 'unresolved reference'오류 발생 {}를 넣어줘야 함(ex. "${name}님 안녕하세요")<br><br><br>
@@ -53,6 +57,7 @@ class Person(val name : String){
     //TODO
 }
 ```
+<br>
 - 'public'이 default라 따로 명시 안함 (자바는 private)
 - 값 객체 생성시 getter/setter가 필요없음
 
@@ -63,6 +68,7 @@ class Person(
     var isMarried : Boolean
 )
 ```
+<br>
 - **자바의 필드와 접근자 메소드를 대신함**
 - val : 읽기 전용 프로퍼티 / 게터만 생성
 - var : 쓸 수 있는 프로퍼티 / 케터와 세터 둘다 생성<br><br>
@@ -76,6 +82,7 @@ class Rectangle (val height : Int, val width : Int){
         }
 }
 ```
+<br>
 - 자체 값을 저장하는 필드 필요없음
 - 게터만 정의하여 구현 가능<br><br>
 
@@ -98,10 +105,51 @@ enum class Color(
     fun rgb() = (r*256+ g) * 256 + b
 }
 ```
+<br>
 - 'enum'은 소프트키워드라 불림 (class 앞에 있을 때만 특별한 의미를 지니고 다른 때에는 이름으로 사용가능)
 - 프로퍼티나 메소드 정의 가능
 - 프로퍼티값 지정과 메소드 정의 사이에 세미콜론(;)이 필수(코틀린내에서 유일하게 ;이 필수)<br><br>
-### when으로 enum 다루기
+### when
+```kotlin
+fun feePolicy(age : String)=
+    when(age){
+        "baby" -> 0
+        "children" -> 1500
+        "youth" -> 3000
+        "adult" -> 4500
+    }
+```
+<br>
+- 자바에서의 switch와 동일 기능
+- 자바와 달리 break를 넣지 않아도 됨
+- 콤마(,)를 사용함으로써 한 분기 안에 여러값을 매치할 수 있음
+- 분기 조건은 임의의 객체를 허용 (collection)
+- 아미 인자 없이 분기의 조건을 boolean 결과를 계산하는 식으로 설정 가능 (이는 가독성이 떨어짐)<br><br>
+
+### 스마트 캐스트
+```kotlin
+fun findType(tmp : Any){
+    if(tmp is Int){
+        //TODO
+    }else if(tmp is String){
+        //TODO
+    }else{
+        //TODO
+    }
+}
+```
+<br>
+- 'is'를 사용해 변수 타입 검사 (자바의 instanceof)
+- 변수 타입 검사 이후에 컴파일러에서 캐스팅을 해줌
+- 스마트 캐스트를 사용하기 위해 해당 프로퍼티는 반드시 val이어야 한다.
+- 명시적 캐스팅을 위해서는 'as'키워드를 사용함<br><br>
 
 ## 4. 대상을 이터레이션 : while / for<br>
+### while/do-while
+```kotlin
+while(조건){
+    //TODO
+
+```
+
 ## 5. 코틀린의 예외처리<br>
