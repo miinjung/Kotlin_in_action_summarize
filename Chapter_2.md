@@ -181,7 +181,8 @@ fun isLstter(tmp : Char) = tmp in 'a'..'z'||'A'..'Z'
 <br>
 - 'in'을 사용하여 어떤 값이 범위에 속하는지 검사 가능 ('!in'도 가능)
 - 집합 내의 요소를 확인하는 용도로도 활용 가능<br><br>
-## 5. 코틀린의 예외처리
+
+## 5. 코틀린의 예외처리<br>
 ```kotlin
 val num = try{
     //TODO
