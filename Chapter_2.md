@@ -13,7 +13,7 @@ fun max (a : Int): Int{
 <br>
 - 함수 선언시, fun 사용<br>
 - 괄호와 반환 타입 사이에 콜론(:)으로 구분<br><br>
-> #### 문(statement)과 식(expression)의 구분<br>
+> **문(statement)과 식(expression)의 구분**<br>
 > 식(expression) : 값을 만들어내며 다른 식의 하위요소로 계산에 참여가능<br>
 > 문 (statement) : 가장 안쪽 블록의 최상위 요소로 존재하며 아무런 값을 만들어내지 않음<br>
 > 코틀린 - 식(expression) / 자바 - 문 (statement)<br><br>
