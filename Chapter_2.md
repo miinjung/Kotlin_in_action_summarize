@@ -151,5 +151,49 @@ while(조건){
     //TODO
 
 ```
+<br><br>
+### 수에 대한 이터레이션: 범위와 수열
+```kotlin
+fun setArray(){
+    val arr : array<Int> = arrayOf()
+    for(i in 0..10){
+        array[i] = i
+    }
+    for(i in 0 until 10){
+        array[i] = i
+    }
+    for(i in 10 downTo 0 step 2){
+        array[i] = i
+    }
+}
+```
+<br>
+- 코틀린의 범위는 폐구간이다. 이는 두번째 값이 항상 범위에 포함되는 것이다.
+- '..'은 범위의 끝값을 포함
+- 'until'은 범위의 끝값을 포함하지 않음
+- 'downTo'은 증가값을 음수로 만듦
+- 'step'은 증가값의 크기를 정의함<br><br>
 
+### in으로 컬렉션이나 범위의 원소 검사
+```kotlin
+fun isLstter(tmp : Char) = tmp in 'a'..'z'||'A'..'Z'
+```
+<br>
+- 'in'을 사용하여 어떤 값이 범위에 속하는지 검사 가능 ('!in'도 가능)
+- 집합 내의 요소를 확인하는 용도로도 활용 가능
 ## 5. 코틀린의 예외처리<br>
+```kotlin
+val num = try{
+    //TODO
+}catch(e: NumberFormatException){
+    //TODO
+}finally{
+    //TODO
+}
+```
+<br>
+- 코틀린의 예외처리는 자바와 유사
+- 자바와 달리 throw는 식이라 다른 식에 포함가능
+- 예외 인스턴스를 만들 때 'new'를 붙일 필요가 없음
+- try, catch, finally를 사용하여 처리
+- try를 식으로 활용 가능
