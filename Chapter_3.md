@@ -18,7 +18,7 @@ val map = hashMapOf(1 to "one", 7 to "seven", 53 to "fifty-three")
 
 ## 2. 함수를 호출하기 쉽게 만들기
 
-###이름 붙인 인자
+### 이름 붙인 인자
 
 **가독성의 문제를 해결**
 
